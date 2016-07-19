@@ -19,9 +19,9 @@ get "#{APIPREFIX}/users/:user_id/subscribed_threads" do |user_id|
 end
 
 post "#{APIPREFIX}/users/:user_id/subscriptions" do |user_id|
-  user.subscribe(source).to_hash.to_json
+  user.subscribe(source)
 end
 
 delete "#{APIPREFIX}/users/:user_id/subscriptions" do |user_id|
-  user.unsubscribe(source).to_hash.to_json
+  user.unsubscribe(source)
 end

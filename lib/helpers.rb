@@ -56,7 +56,7 @@ helpers do
     obj.save
     obj.reload.to_hash.to_json
   end
-  
+
   def un_flag_as_abuse(obj)
     raise ArgumentError, t(:user_id_is_required) unless user
     if params["all"]
@@ -66,7 +66,7 @@ helpers do
     else
       obj.abuse_flaggers.delete user.id
     end
-    
+
     obj.save
     obj.reload.to_hash.to_json
   end

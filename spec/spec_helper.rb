@@ -398,3 +398,9 @@ def create_comment_thread_and_comments
 
   thread
 end
+
+def test_thread_marked_as_read(user, thread)
+  read_states = user.read_states.where(course_id: thread.course_id).to_a
+  read_date = read_states.first.last_read_times[thread.id.to_s]
+  read_date.should >= thread.updated_at
+end
