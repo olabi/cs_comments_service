@@ -88,8 +88,8 @@ require 'yajl/json_gem'
 # Note that BSON was moved from Moped::BSON::ObjectId to BSON::ObjectId
 module BSON
   class ObjectId
-    def to_json
-      self.to_s.to_json
+    def as_json(options = {})
+      self.to_s
     end
   end
 end
